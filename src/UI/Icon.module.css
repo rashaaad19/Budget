@@ -1,0 +1,22 @@
+.badge{
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+    width: 2.5rem;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+.expense{
+    background-color: pink;
+    color: palevioletred;
+}
+.edit{
+    background-color:rgb(172, 226, 247);
+    color:steelblue;
+}
+.delete{
+    background-color: rgb(255, 155, 188);
+    color: rgb(255, 69, 100);
+}
+

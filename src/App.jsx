@@ -1,16 +1,14 @@
-import './App.css'
-import Button from './components/Button'
-import Data from './components/Data'
+import "./App.css";
+import Layout from "./UI/Layout";
+import Card from "./components/Card";
 
 function App() {
-
   return (
-    <>
-     <h1>Hello world</h1>
-     <Button/>
-     <Data/>
-    </>
-  )
+    <Layout>
+      <h1>Hello world</h1>
+      <Card/>
+    </Layout>
+  );
 }
 
-export default App
+export default App;
