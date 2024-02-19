@@ -2,6 +2,7 @@ import classes from "./App.module.css";
 import Button from "./UI/Button";
 import Layout from "./UI/Layout";
 import Card from "./components/Card";
+import Form from "./components/Form";
 import buttonStyle from "./UI/Button.module.css";
 
 import { useSelector } from "react-redux";
@@ -71,6 +72,7 @@ function App() {
           />
         ))}
       </div>
+      <Form/>
     </Layout>
   );
 }

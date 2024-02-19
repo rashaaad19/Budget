@@ -1,0 +1,6 @@
+.modal{
+    background: blue;
+}
+.modal::backdrop{
+    background: red;
+}
