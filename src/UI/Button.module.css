@@ -1,0 +1,19 @@
+.filterBtn{
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid midnightblue;
+    color: midnightblue;
+    cursor: pointer;
+    border-radius: 10px;
+    max-width: 8rem;
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+}
+.filterBtn:hover{
+background: #22326432;
+}
+.filterBtn.active{
+    background: #22326432;
+
+}

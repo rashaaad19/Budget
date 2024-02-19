@@ -5,11 +5,14 @@
     width: 2.5rem;
     text-align: center;
     font-size: 24px;
-    cursor: pointer;
 }
 .expense{
     background-color: pink;
     color: palevioletred;
+}
+.income{
+    background-color: skyblue;
+    color:darkcyan;
 }
 .edit{
     background-color:rgb(172, 226, 247);
@@ -20,3 +23,9 @@
     color: rgb(255, 69, 100);
 }
 
+.edit, .delete{
+    cursor: pointer;
+}
+.edit:hover, .delete:hover{
+    filter: brightness(0.9);
+}

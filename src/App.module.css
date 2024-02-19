@@ -1,0 +1,17 @@
+.filterContainer{
+    display: flex;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+@media (max-width:424px) {
+    .filterContainer{
+        flex-wrap: wrap;
+    }
+}
