@@ -5,7 +5,7 @@ const budgetSlice = createSlice({
       {
         id: 15,
         name: "Clothes",
-        price: 150,
+        price: 150.45,
         type: "expenses",
         date: "24 April 2024",
       },
@@ -32,7 +32,7 @@ const budgetSlice = createSlice({
       },
     ],
     filteredItems:[],
-    totalCost: 0,
+    total: 0,
   },
   name: "money",
   reducers: {

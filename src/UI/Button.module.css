@@ -15,5 +15,18 @@ background: #22326432;
 }
 .filterBtn.active{
     background: #22326432;
-
+}
+.addBtn{
+    padding: 10px 40px;
+    background: whitesmoke;
+    color: midnightblue;
+    border: 1px solid transparent;
+    cursor: pointer;
+    max-width: 10rem;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+.addBtn:hover{
+    background-color: midnightblue;
+    color: whitesmoke;
 }

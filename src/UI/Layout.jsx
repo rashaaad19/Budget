@@ -1,6 +1,6 @@
 import classes from "./Layout.module.css";
 const Layout = ({ children }) => {
-  return <div className={classes.container}>{children}</div>;
+  return <main className={classes.container}>{children}</main>;
 };
 
 export default Layout;

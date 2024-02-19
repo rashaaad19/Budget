@@ -3,6 +3,22 @@
     gap: 10px;
 }
 
+.balanceContainer{
+    display: flex;
+    align-items: center;
+    margin-block: 4rem;
+    justify-content: space-between;
+}
+.balance{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.balance p {
+    margin-top: 0.5rem;
+    font-size: 20px;
+    color: lightslategray;
+}
 
 
 

@@ -1,13 +1,24 @@
 import { useDispatch } from "react-redux";
 import { budgetActions } from "../store/budget-slice";
-const Button = ({ title, className, type }) => {
+import { uiActions } from "../store/ui-slice";
+const Button = ({ title, className, type, filterType }) => {
   const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch(budgetActions.filterItems(type));
+  const handleFilterClick = () => {
+    dispatch(budgetActions.filterItems(filterType));
+    dispatch(uiActions.changeCategory(filterType));
   };
+  const handleAddItem=()=>{
+    console.log('Add')
+  }
   return (
-    <button onClick={handleClick} className={className}>
+    <button
+      onClick={
+        type==='filter' ?
+        handleFilterClick:
+        handleAddItem
+      }
+      className={className}
+    >
       {title}
     </button>
   );
