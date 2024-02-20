@@ -7,8 +7,9 @@ const Button = ({ title, className, type, filterType }) => {
     dispatch(budgetActions.filterItems(filterType));
     dispatch(uiActions.changeCategory(filterType));
   };
+  
   const handleAddItem=()=>{
-    console.log('Add')
+    dispatch(uiActions.toggleModal())
   }
   return (
     <button

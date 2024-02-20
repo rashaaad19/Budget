@@ -21,6 +21,8 @@ function App() {
       return (acc += curr.price);
     }
   }, 0);
+
+  
   return (
     <Layout>
       <div className={classes.balanceContainer}>

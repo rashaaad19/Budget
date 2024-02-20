@@ -1,16 +1,25 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import classes from "./Modal.module.css";
-const Modal = ({ children, open, className = "" }) => {
+import { useSelector } from "react-redux";
+const Modal = ({ children, open, onClose, className = "" }) => {
   const dialog = useRef();
+  const showModal = useSelector((state) => state.ui.showModal);
   useEffect(() => {
-    if (open) {
+    if (showModal) {
       dialog.current.showModal();
     }
-  }, [open]);
+    if (!showModal) {
+      dialog.current.close();
+    }
+  }, [showModal]);
 
   return createPortal(
-    <dialog ref={dialog} className={`${classes.modal} ${className}`}>
+    <dialog
+      ref={dialog}
+      className={`${classes.modal} ${className}`}
+      onClose={onClose}
+    >
       {children}
     </dialog>,
     document.getElementById("modal")
