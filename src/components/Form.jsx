@@ -6,9 +6,9 @@ import Select from "./Select";
 
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../store/ui-slice";
-
-import { generateId } from "../utilties/functions";
 import { budgetActions } from "../store/budget-slice";
+
+import { generateId, getCurrentDate } from "../utilties/functions";
 
 const Form = () => {
   const optionsArray = [
@@ -16,8 +16,10 @@ const Form = () => {
     { id: 1, value: "Rent" },
     { id: 2, value: "Travel" },
   ];
+  const date = new Date();
   const dispatch = useDispatch();
   const modalIsOpen = useSelector((state) => state.ui.showModal);
+
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -27,6 +29,7 @@ const Form = () => {
         name: formData.get("title"),
         price: formData.get("value"),
         category: formData.get("category"),
+        date: getCurrentDate(date),
         type: "expenses",
         id: generateId(),
       })

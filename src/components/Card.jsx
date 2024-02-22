@@ -8,6 +8,8 @@ import { PiBankLight } from "react-icons/pi";
 import { currencyFormatter } from "../utilties/functions";
 
 const Card = ({ name, date, type, price, id }) => {
+
+  
   return (
     <>
       <div className={classes.transactionContainer}>
@@ -40,7 +42,6 @@ const Card = ({ name, date, type, price, id }) => {
           />
         </div>
       </div>
-      ;
     </>
   );
 };

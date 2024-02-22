@@ -22,7 +22,6 @@ function App() {
     }
   }, 0);
 
-  
   return (
     <Layout>
       <div className={classes.balanceContainer}>

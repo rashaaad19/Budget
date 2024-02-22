@@ -47,6 +47,7 @@ const budgetSlice = createSlice({
           name: newItem.name,
           price: newItem.price,
           type: newItem.type,
+          date:newItem.date
         });
       }
     },
