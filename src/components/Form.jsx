@@ -71,6 +71,11 @@ const Form = () => {
           type="number"
           id="value"
           label="Value"
+          step="0.01"
+          inputMode="numeric"
+          pattern="[0-9]"
+          placeholder="0.00"
+          autoComplete="off"
           className={classes.inputContainer}
           required
         />
