@@ -20,7 +20,7 @@
 }
 .delete{
     background-color: rgb(255, 155, 188);
-    color: rgb(255, 69, 100);
+    color: #ff4564;
 }
 
 .edit, .delete{

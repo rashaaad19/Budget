@@ -4,14 +4,34 @@
   flex-direction: column;
   padding: 2rem;
 }
-.form h1 {
+.formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.formHeader button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 5rem;
+  cursor: pointer;
+  background: whitesmoke;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.formHeader h1 {
   color: #034c5f;
   font-size: 32px;
+  text-transform: capitalize;
 }
 .form hr {
-  height: 2px;
-  background: #97bec6;
+  height: 3px;
   width: 100%;
+}
+.expenseHeader {
+  background: #ff4564;
+}
+.incomeHeader {
+  background: #97bec6;
 }
 .inputContainer,
 .selectContainer {

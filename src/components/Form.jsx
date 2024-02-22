@@ -9,18 +9,23 @@ import { uiActions } from "../store/ui-slice";
 import { budgetActions } from "../store/budget-slice";
 
 import { generateId, getCurrentDate } from "../utilties/functions";
+import {
+  expensesOptionsArray,
+  incomeOptionsArray,
+} from "../utilties/variables";
 
 const Form = () => {
-  const optionsArray = [
-    { id: 0, value: "Shopping" },
-    { id: 1, value: "Rent" },
-    { id: 2, value: "Travel" },
-  ];
+  let optionsArray = [];
   const date = new Date();
   const dispatch = useDispatch();
   const modalIsOpen = useSelector((state) => state.ui.showModal);
+  const formType = useSelector((state) => state.ui.formType);
 
-
+  if (formType === "expenses") {
+    optionsArray = expensesOptionsArray;
+  } else if (formType === "income") {
+    optionsArray = incomeOptionsArray;
+  }
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -41,19 +46,32 @@ const Form = () => {
     }
   };
 
+  const handleOnSwitch = () => {
+    dispatch(uiActions.toggleFormType());
+  };
+
   const handleOnClose = () => {
     if (modalIsOpen) {
       dispatch(uiActions.toggleModal());
     }
   };
-
+  console.log(formType);
   return (
     <Modal onClose={handleOnClose}>
       <form className={classes.form} onSubmit={handleOnSubmit}>
-        <div>
-          <h1>Expenses</h1>
+        <div className={classes.formHeader}>
+          <h1>{formType}</h1>
+          <button type="button" onClick={handleOnSwitch}>
+            Switch
+          </button>
         </div>
-        <hr />
+        <hr
+          className={
+            formType === "expenses"
+              ? classes.expenseHeader
+              : classes.incomeHeader
+          }
+        />
         <Select
           name="category"
           label="Category"

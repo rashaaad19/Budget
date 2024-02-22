@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
-  initialState: { current: "all", showModal: false },
+  initialState: { current: "all", showModal: false, formType: "expenses" },
   name: "ui",
   reducers: {
     changeCategory(state, action) {
@@ -10,6 +10,16 @@ const uiSlice = createSlice({
 
     toggleModal(state) {
       state.showModal = !state.showModal;
+    },
+    toggleFormType(state) {
+      if (state.formType === "expenses") {
+        state.formType = "income";
+      }
+      else if (state.formType === "income") {
+        state.formType = "expenses";
+      } 
+      else return;
+
     },
   },
 });
