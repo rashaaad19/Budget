@@ -35,10 +35,11 @@ const Form = () => {
         price: formData.get("value"),
         category: formData.get("category"),
         date: getCurrentDate(date),
-        type: "expenses",
+        type: formType,
         id: generateId(),
       })
     );
+      event.target.reset();
     //check if the modal is openned before closing it
     if (modalIsOpen) {
       dispatch(uiActions.toggleModal());
