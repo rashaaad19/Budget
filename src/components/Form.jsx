@@ -3,11 +3,13 @@ import classes from "./Form.module.css";
 import Modal from "../UI/Modal";
 import Input from "./Input";
 import Select from "./Select";
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../store/ui-slice";
 
 import { generateId } from "../utilties/functions";
 import { budgetActions } from "../store/budget-slice";
+
 const Form = () => {
   const optionsArray = [
     { id: 0, value: "Shopping" },
@@ -15,6 +17,7 @@ const Form = () => {
     { id: 2, value: "Travel" },
   ];
   const dispatch = useDispatch();
+  const modalIsOpen = useSelector((state) => state.ui.showModal);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -28,14 +31,19 @@ const Form = () => {
         id: generateId(),
       })
     );
-    dispatch(uiActions.toggleModal());
-    console.log("Sunmitted");
+    //check if the modal is openned before closing it
+    if (modalIsOpen) {
+      dispatch(uiActions.toggleModal());
+      console.log("Sunmitted");
+    }
   };
 
   const handleOnClose = () => {
-    dispatch(uiActions.toggleModal());
-    console.log('cancel')
+    if (modalIsOpen) {
+      dispatch(uiActions.toggleModal());
+    }
   };
+
   return (
     <Modal onClose={handleOnClose}>
       <form className={classes.form} onSubmit={handleOnSubmit}>

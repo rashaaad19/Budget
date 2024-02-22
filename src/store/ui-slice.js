@@ -7,6 +7,7 @@ const uiSlice = createSlice({
     changeCategory(state, action) {
       state.current = action.payload;
     },
+
     toggleModal(state) {
       state.showModal = !state.showModal;
     },
