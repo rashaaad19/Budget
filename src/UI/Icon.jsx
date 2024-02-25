@@ -1,7 +1,9 @@
-const Icon = ({icon,className}) => {
-  return <div className={className}>
-        {icon}
-  </div>;
+const Icon = ({ icon, className, handleOnClick }) => {
+  return (
+    <div className={className} onClick={handleOnClick}>
+      {icon}
+    </div>
+  );
 };
 
 export default Icon;

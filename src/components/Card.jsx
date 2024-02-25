@@ -6,10 +6,19 @@ import { MdOutlineShoppingBag, MdOutlineDelete } from "react-icons/md";
 import { FiEdit3 } from "react-icons/fi";
 import { PiBankLight } from "react-icons/pi";
 import { currencyFormatter } from "../utilties/functions";
+import { useDispatch } from "react-redux";
+import { uiActions } from "../store/ui-slice";
+import { budgetActions } from "../store/budget-slice";
 
 const Card = ({ name, date, type, price, id }) => {
-
-  
+  const dispatch = useDispatch();
+  const handleOnEdit = () => {
+    console.log("Edit clicked");
+    dispatch(uiActions.toggleModal());
+  };
+  const handleOnDelete = () => {
+    dispatch(budgetActions.deleteItem(id));
+  };
   return (
     <>
       <div className={classes.transactionContainer}>
@@ -35,10 +44,12 @@ const Card = ({ name, date, type, price, id }) => {
           <Icon
             className={`${iconClasses.badge} ${iconClasses.edit}`}
             icon={<FiEdit3 />}
+            handleOnClick={handleOnEdit}
           />
           <Icon
             className={`${iconClasses.badge} ${iconClasses.delete}`}
             icon={<MdOutlineDelete />}
+            handleOnClick={handleOnDelete}
           />
         </div>
       </div>

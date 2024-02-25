@@ -19,11 +19,11 @@ const Form = () => {
   const date = new Date();
   const dispatch = useDispatch();
   const modalIsOpen = useSelector((state) => state.ui.showModal);
-  const formType = useSelector((state) => state.ui.formType);
+  const dataType = useSelector((state) => state.ui.dataType);
 
-  if (formType === "expenses") {
+  if (dataType === "expenses") {
     optionsArray = expensesOptionsArray;
-  } else if (formType === "income") {
+  } else if (dataType === "income") {
     optionsArray = incomeOptionsArray;
   }
   const handleOnSubmit = (event) => {
@@ -35,7 +35,7 @@ const Form = () => {
         price: formData.get("value"),
         category: formData.get("category"),
         date: getCurrentDate(date),
-        type: formType,
+        type: dataType,
         id: generateId(),
       })
     );
@@ -49,7 +49,7 @@ const Form = () => {
   };
 
   const handleOnSwitch = () => {
-    dispatch(uiActions.toggleFormType());
+    dispatch(uiActions.toggleDataType());
   };
 
   const handleOnClose = () => {
@@ -57,19 +57,18 @@ const Form = () => {
       dispatch(uiActions.toggleModal());
     }
   };
-  console.log(formType);
   return (
     <Modal onClose={handleOnClose}>
       <form className={classes.form} onSubmit={handleOnSubmit}>
         <div className={classes.formHeader}>
-          <h1>{formType}</h1>
+          <h1>{dataType}</h1>
           <button type="button" onClick={handleOnSwitch}>
             Switch
           </button>
         </div>
         <hr
           className={
-            formType === "expenses"
+            dataType === "expenses"
               ? classes.expenseHeader
               : classes.incomeHeader
           }

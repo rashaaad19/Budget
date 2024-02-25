@@ -9,10 +9,12 @@ import { useSelector } from "react-redux";
 import { currencyFormatter } from "./utilties/functions";
 function App() {
   const items = useSelector((state) => state.budget.items);
+  const category = useSelector((state) => state.ui.category);
   const filteredItems = useSelector((state) => state.budget.filteredItems);
-  const currentBtn = useSelector((state) => state.ui.current);
-  const displayData = filteredItems.length > 0 ? filteredItems : items;
+  // const displayData = category === "all" ? items : filteredItems;
+  const displayData = filteredItems.length>0?filteredItems:items
 
+  console.log(displayData);
   const totalBalance = items.reduce((acc, curr) => {
     if (curr.type === "expenses") {
       return (acc -= curr.price);
@@ -41,7 +43,7 @@ function App() {
           type="filter"
           filterType="all"
           className={`${buttonStyle.filterBtn} ${
-            currentBtn === "all" && buttonStyle.active 
+            category === "all" && buttonStyle.active
           }`}
         />
         <Button
@@ -49,7 +51,7 @@ function App() {
           type="filter"
           filterType="income"
           className={`${buttonStyle.filterBtn} ${
-            currentBtn === "income" && buttonStyle.active 
+            category === "income" && buttonStyle.active
           }`}
         />
         <Button
@@ -57,7 +59,7 @@ function App() {
           type="filter"
           filterType="expenses"
           className={`${buttonStyle.filterBtn} ${
-            currentBtn === "expenses" && buttonStyle.active 
+            category === "expenses" && buttonStyle.active
           }`}
         />
       </div>
@@ -70,10 +72,11 @@ function App() {
             price={item.price}
             date={item.date}
             type={item.type}
+            id={item.id}
           />
         ))}
       </div>
-      <Form/>
+      <Form />
     </Layout>
   );
 }
