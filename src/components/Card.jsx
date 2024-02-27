@@ -13,7 +13,7 @@ import { budgetActions } from "../store/budget-slice";
 const Card = ({ name, date, type, price, id }) => {
   const dispatch = useDispatch();
   const handleOnEdit = () => {
-    console.log("Edit clicked");
+    dispatch(uiActions.toggleFormType("edit"));
     dispatch(uiActions.toggleModal());
   };
   const handleOnDelete = () => {

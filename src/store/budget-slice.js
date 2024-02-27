@@ -71,11 +71,15 @@ const budgetSlice = createSlice({
     },
     editItem(state, action) {
       const editedExpense = action.payload;
-      const selectedExpense = state.items.find(
-        (element) => element.id === editedExpense
+      const selectedExpenseIndex = state.items.findIndex(
+        (element) => element.id === editedExpense.id
       );
-      if (selectedExpense) {
-        selectedExpense.id = 4213;
+
+      if (selectedExpenseIndex !== -1) {
+        // selectedExpense.name = editedExpense.name;
+        // selectedExpense.price = editedExpense.price;
+        // selectedExpense.type = editedExpense.type;
+        state.items[selectedExpenseIndex] = editedExpense;
       }
     },
     toggleFilter(state, action) {

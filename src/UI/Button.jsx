@@ -11,6 +11,7 @@ const Button = ({ title, className, type, filterType }) => {
 
   const handleAddItem = () => {
     dispatch(uiActions.toggleModal());
+    dispatch(uiActions.toggleFormType("add"));
   };
   return (
     <button

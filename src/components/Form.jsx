@@ -20,7 +20,8 @@ const Form = () => {
   const dispatch = useDispatch();
   const modalIsOpen = useSelector((state) => state.ui.showModal);
   const dataType = useSelector((state) => state.ui.dataType);
-
+  const formType = useSelector((state) => state.ui.formType);
+  console.log(formType);
   if (dataType === "expenses") {
     optionsArray = expensesOptionsArray;
   } else if (dataType === "income") {
@@ -29,16 +30,20 @@ const Form = () => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    dispatch(
-      budgetActions.addItem({
-        name: formData.get("title"),
-        price: formData.get("value"),
-        category: formData.get("category"),
-        date: getCurrentDate(date),
-        type: dataType,
-        id: generateId(),
-      })
-    );
+    const formDataEntries = {
+      name: formData.get("title"),
+      price: formData.get("value"),
+      category: formData.get("category"),
+      date: getCurrentDate(date),
+      type: dataType,
+      id: generateId(),
+    };
+    if (formType === "add") {
+      dispatch(budgetActions.addItem(formDataEntries));
+    }
+    if (formType === "edit") {
+      dispatch(budgetActions.editItem(formDataEntries));
+    }
     event.target.reset();
 
     //check if the modal is openned before closing it
@@ -60,12 +65,18 @@ const Form = () => {
   return (
     <Modal onClose={handleOnClose}>
       <form className={classes.form} onSubmit={handleOnSubmit}>
-        <div className={classes.formHeader}>
-          <h1>{dataType}</h1>
-          <button type="button" onClick={handleOnSwitch}>
-            Switch
-          </button>
-        </div>
+        {formType === "edit" ? (
+          <div className={classes.formHeader}>
+            <h1>Edit {dataType}</h1>
+          </div>
+        ) : (
+          <div className={classes.formHeader}>
+            <h1>New {dataType}</h1>
+            <button type="button" onClick={handleOnSwitch}>
+              Switch
+            </button>
+          </div>
+        )}
         <hr
           className={
             dataType === "expenses"
