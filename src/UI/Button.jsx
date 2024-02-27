@@ -6,18 +6,15 @@ const Button = ({ title, className, type, filterType }) => {
   const handleFilterClick = () => {
     dispatch(budgetActions.filterItems(filterType));
     dispatch(uiActions.changeCategory(filterType));
+    dispatch(budgetActions.toggleFilter(filterType));
   };
-  
-  const handleAddItem=()=>{
-    dispatch(uiActions.toggleModal())
-  }
+
+  const handleAddItem = () => {
+    dispatch(uiActions.toggleModal());
+  };
   return (
     <button
-      onClick={
-        type==='filter' ?
-        handleFilterClick:
-        handleAddItem
-      }
+      onClick={type === "filter" ? handleFilterClick : handleAddItem}
       className={className}
     >
       {title}

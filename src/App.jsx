@@ -9,11 +9,10 @@ import { useSelector } from "react-redux";
 import { currencyFormatter } from "./utilties/functions";
 function App() {
   const items = useSelector((state) => state.budget.items);
-  const category = useSelector((state) => state.ui.category);
+  const category = useSelector((state) => state.budget.currentFilter);
   const filteredItems = useSelector((state) => state.budget.filteredItems);
-  // const displayData = category === "all" ? items : filteredItems;
-  const displayData = filteredItems.length>0?filteredItems:items
-
+  const displayData = category === "all" ? items : filteredItems;
+  console.log(useSelector((state) => state.budget.currentFilter));
   console.log(displayData);
   const totalBalance = items.reduce((acc, curr) => {
     if (curr.type === "expenses") {

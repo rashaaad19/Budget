@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
-  initialState: { category: "all", showModal: false, dataType: "expenses" },
+  initialState: { showModal: false, dataType: "expenses" },
   name: "ui",
   reducers: {
     changeCategory(state, action) {

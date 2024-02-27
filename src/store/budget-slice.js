@@ -9,7 +9,13 @@ const budgetSlice = createSlice({
         type: "expenses",
         date: "24 April 2024",
       },
-
+      {
+        id: 242,
+        name: "Salary",
+        price: 2300,
+        type: "income",
+        date: "15 April 2024",
+      },
       {
         id: 351,
         name: "Travel",
@@ -25,6 +31,7 @@ const budgetSlice = createSlice({
         date: "10 May 2024",
       },
     ],
+    currentFilter: "all",
     filteredItems: [],
     total: 0,
   },
@@ -43,14 +50,19 @@ const budgetSlice = createSlice({
           type: newItem.type,
           date: newItem.date,
         });
+        // Recalculate filteredItems based on current filter (if available)
+        if (state.currentFilter !== "all") {
+          state.filteredItems = state.items.filter(
+            item => item.type === state.currentFilter
+          );
+        } else {
+          // If no current filter, reset filteredItems to the original items
+          state.filteredItems = state.items.slice();
+        }
       }
     },
     deleteItem(state, action) {
-      //delete from original array
       state.items = state.items.filter(
-        (element) => element.id !== action.payload
-      );
-      state.filteredItems = state.filteredItems.filter(
         (element) => element.id !== action.payload
       );
     },
@@ -62,6 +74,10 @@ const budgetSlice = createSlice({
       if (selectedExpense) {
         selectedExpense.id = 4213;
       }
+    },
+    toggleFilter(state, action) {
+      const newFilter = action.payload;
+      state.currentFilter = newFilter;
     },
     filterItems(state, action) {
       const itemType = action.payload;

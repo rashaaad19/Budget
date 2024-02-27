@@ -39,8 +39,8 @@ const Form = () => {
         id: generateId(),
       })
     );
-      event.target.reset();
-      
+    event.target.reset();
+
     //check if the modal is openned before closing it
     if (modalIsOpen) {
       dispatch(uiActions.toggleModal());
