@@ -5,8 +5,8 @@ const Button = ({ title, className, type, filterType }) => {
   const dispatch = useDispatch();
   const handleFilterClick = () => {
     dispatch(budgetActions.filterItems(filterType));
-    dispatch(uiActions.changeCategory(filterType));
     dispatch(budgetActions.toggleFilter(filterType));
+    dispatch(uiActions.changeCategory(filterType));
   };
 
   const handleAddItem = () => {

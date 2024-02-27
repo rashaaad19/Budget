@@ -46,14 +46,14 @@ const budgetSlice = createSlice({
         state.items.push({
           id: newItem.id,
           name: newItem.name,
-          price: newItem.price,
+          price: Number(newItem.price),
           type: newItem.type,
           date: newItem.date,
         });
         // Recalculate filteredItems based on current filter (if available)
         if (state.currentFilter !== "all") {
           state.filteredItems = state.items.filter(
-            item => item.type === state.currentFilter
+            (item) => item.type === state.currentFilter
           );
         } else {
           // If no current filter, reset filteredItems to the original items
@@ -63,6 +63,9 @@ const budgetSlice = createSlice({
     },
     deleteItem(state, action) {
       state.items = state.items.filter(
+        (element) => element.id !== action.payload
+      );
+      state.filteredItems = state.filteredItems.filter(
         (element) => element.id !== action.payload
       );
     },

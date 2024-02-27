@@ -12,8 +12,7 @@ function App() {
   const category = useSelector((state) => state.budget.currentFilter);
   const filteredItems = useSelector((state) => state.budget.filteredItems);
   const displayData = category === "all" ? items : filteredItems;
-  console.log(useSelector((state) => state.budget.currentFilter));
-  console.log(displayData);
+
   const totalBalance = items.reduce((acc, curr) => {
     if (curr.type === "expenses") {
       return (acc -= curr.price);

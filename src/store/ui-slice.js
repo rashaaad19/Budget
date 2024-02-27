@@ -16,7 +16,7 @@ const uiSlice = createSlice({
         state.dataType = "income";
       } else if (state.dataType === "income") {
         state.dataType = "expenses";
-      } else return;
+      }
     },
   },
 });
