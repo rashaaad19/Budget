@@ -36,10 +36,10 @@ const Form = () => {
       category: formData.get("category"),
       date: getCurrentDate(date),
       type: dataType,
-      id: generateId(),
     };
+    console.log(formDataEntries);
     if (formType === "add") {
-      dispatch(budgetActions.addItem(formDataEntries));
+      dispatch(budgetActions.addItem({ ...formDataEntries, id: generateId() }));
     }
     if (formType === "edit") {
       dispatch(budgetActions.editItem(formDataEntries));
@@ -49,7 +49,7 @@ const Form = () => {
     //check if the modal is openned before closing it
     if (modalIsOpen) {
       dispatch(uiActions.toggleModal());
-      console.log("Sunmitted");
+      console.log("Submitted");
     }
   };
 

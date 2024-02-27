@@ -33,7 +33,7 @@ const budgetSlice = createSlice({
     ],
     currentFilter: "all",
     filteredItems: [],
-    total: 0,
+    selectedItem:null,
   },
   name: "money",
   reducers: {
@@ -69,17 +69,29 @@ const budgetSlice = createSlice({
         (element) => element.id !== action.payload
       );
     },
+    setSelectedItem(state,action){
+      const selectedItemId=action.payload
+      state.selectedItem=selectedItemId
+    },
     editItem(state, action) {
-      const editedExpense = action.payload;
-      const selectedExpenseIndex = state.items.findIndex(
-        (element) => element.id === editedExpense.id
-      );
+      const  editedItem = action.payload;
+      const index = state.items.findIndex((item) => item.id === state.selectedItem);
+      console.log(state.selectedItem)
+      if (index !== -1) {
+        // Update the item at the specific index
+        state.items[index] = {
+          ...state.items[index],
+          ...editedItem,
+        };
 
-      if (selectedExpenseIndex !== -1) {
-        // selectedExpense.name = editedExpense.name;
-        // selectedExpense.price = editedExpense.price;
-        // selectedExpense.type = editedExpense.type;
-        state.items[selectedExpenseIndex] = editedExpense;
+        // Update filteredItems if necessary
+        if (state.currentFilter !== "all") {
+          state.filteredItems = state.items.filter(
+            (item) => item.type === state.currentFilter
+          );
+        } else {
+          state.filteredItems = state.items.slice();
+        }
       }
     },
     toggleFilter(state, action) {
