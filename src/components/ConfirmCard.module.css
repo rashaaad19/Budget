@@ -1,3 +1,28 @@
-.container h1{
-    font-size: 24px;
+.container h1 {
+  font-size: 24px;
+  color: var(--color-gray-blue-1000);
+  margin-bottom: 3rem;
+}
+
+.cardCtrl {
+  display: flex;
+  gap: 10px;
+}
+.cardCtrl button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cardCtrl button:nth-child(1) {
+  background-color: var(--color-pink-600);
+  border: 1px solid var(--color-blue-100);
+  color: var(--color-pink-50);
+}
+.cardCtrl button:nth-child(2) {
+  background-color: var(--color-blue-50);
+  border: 1px solid var(--color-blue-50);
+  color: var(--color-gray-blue-1000);
+}
+.cardCtrl button:hover{
+    opacity: 60%;
 }

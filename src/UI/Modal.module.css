@@ -9,5 +9,5 @@
   }
 
   .modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: #5b79ff72;
   }

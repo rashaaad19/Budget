@@ -43,7 +43,7 @@ const Card = ({ name, date, type, price, id }) => {
             <h3>{name}</h3>
             <p>{date}</p>
           </div>
-          <p>{currencyFormatter(price)}</p>
+          <p className={classes.price}>{currencyFormatter(price)}</p>
         </div>
 
         <div className={classes.transactionControl}>

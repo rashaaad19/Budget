@@ -16,6 +16,11 @@
 }
 .transactionLabel{
     flex: 1;
+    color: var(--color-gray-blue-900);
+}
+.price{
+    color: var(--color-gray-blue-1000);
+    font-weight: bold;
 }
 
 .transactionControl {

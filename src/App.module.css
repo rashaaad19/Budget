@@ -14,10 +14,13 @@
     align-items: center;
     gap: 15px;
 }
+.balance h1{
+    color: var(--color-gray-blue-1000);
+}
 .balance p {
     margin-top: 0.5rem;
     font-size: 20px;
-    color: lightslategray;
+    color: var(--color-gray-blue-600);
 }
 
 .balance p.redError{

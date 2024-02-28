@@ -7,20 +7,20 @@
     font-size: 24px;
 }
 .expense{
-    background-color: pink;
-    color: palevioletred;
+    background-color: var(--color-pink-100);
+    color: var(--color-pink-400);
 }
 .income{
-    background-color: skyblue;
-    color:darkcyan;
+    background-color: var(--color-blue-300);
+    color:var(--color-blue-700);
 }
 .edit{
-    background-color:rgb(172, 226, 247);
-    color:steelblue;
+    background-color:var(--color-blue-300);
+    color:var(--color-blue-700);
 }
 .delete{
-    background-color: rgb(255, 155, 188);
-    color: #ff4564;
+    background-color: var(--color-pink-100);
+    color: var(--color-pink-500);
 }
 
 .edit, .delete{

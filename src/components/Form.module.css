@@ -14,12 +14,12 @@
   padding: 10px;
   width: 5rem;
   cursor: pointer;
-  background: whitesmoke;
+  background: var(--color-gray-blue-50);
   border: 1px solid transparent;
   border-radius: 5px;
 }
 .formHeader h1 {
-  color: #034c5f;
+  color: var(--color-gray-blue-900);
   font-size: 32px;
   text-transform: capitalize;
 }
@@ -28,10 +28,10 @@
   width: 100%;
 }
 .expenseHeader {
-  background: #ff4564;
+  background: var(--color-pink-400);
 }
 .incomeHeader {
-  background: #97bec6;
+  background: var(--color-blue-400);
 }
 .inputContainer,
 .selectContainer {
@@ -43,7 +43,8 @@
 .inputContainer label,
 .selectContainer label {
   margin-bottom: 5px;
-  color: #023541;
+  color: var(--color-gray-blue-900);
+  font-weight: bold;
 }
 .inputContainer input,
 .selectContainer select {
@@ -69,12 +70,12 @@
   cursor: pointer;
 }
 .formActions button:nth-child(1) {
-  background: #0f4752;
-  color: whitesmoke;
+  background: var(--color-blue-800);
+  color: var(--color-blue-50);
 }
 .formActions button:nth-child(2) {
-  background: whitesmoke;
-  color: #0f4752;
+  color: var(--color-blue-50);
+  color: var(--color-blue-800);
 }
 
 
