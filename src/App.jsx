@@ -7,6 +7,7 @@ import buttonStyle from "./UI/Button.module.css";
 
 import { useSelector } from "react-redux";
 import { currencyFormatter } from "./utilties/functions";
+import ConfirmCard from "./components/ConfirmCard";
 function App() {
   const items = useSelector((state) => state.budget.items);
   const category = useSelector((state) => state.budget.currentFilter);
@@ -74,6 +75,7 @@ function App() {
         ))}
       </div>
       <Form />
+      <ConfirmCard/>
     </Layout>
   );
 }

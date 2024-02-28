@@ -70,13 +70,15 @@ const budgetSlice = createSlice({
       );
     },
     setSelectedItem(state,action){
-      const selectedItemId=action.payload
-      state.selectedItem=selectedItemId
+      const currentItem=action.payload
+      state.selectedItem=currentItem
+      console.log(currentItem)
+
     },
     editItem(state, action) {
       const  editedItem = action.payload;
-      const index = state.items.findIndex((item) => item.id === state.selectedItem);
-      console.log(state.selectedItem)
+      const index = state.items.findIndex((item) => item.id === state.selectedItem.id);
+      console.log(state.selectedItem.id)
       if (index !== -1) {
         // Update the item at the specific index
         state.items[index] = {

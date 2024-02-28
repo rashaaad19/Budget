@@ -1,25 +1,28 @@
 import Icon from "../UI/Icon";
 import classes from "./Card.module.css";
 import iconClasses from "../UI/Icon.module.css";
-
-import { MdOutlineShoppingBag, MdOutlineDelete } from "react-icons/md";
 import { FiEdit3 } from "react-icons/fi";
 import { PiBankLight } from "react-icons/pi";
+import { MdOutlineShoppingBag, MdOutlineDelete } from "react-icons/md";
+
 import { currencyFormatter } from "../utilties/functions";
 import { useDispatch } from "react-redux";
 import { uiActions } from "../store/ui-slice";
 import { budgetActions } from "../store/budget-slice";
 
 const Card = ({ name, date, type, price, id }) => {
+  const itemData = { name, date, type, price, id };
   const dispatch = useDispatch();
   const handleOnEdit = () => {
-    console.log(id);
-    dispatch(budgetActions.setSelectedItem(id));
+    dispatch(budgetActions.setSelectedItem(itemData));
     dispatch(uiActions.toggleFormType("edit"));
+    dispatch(uiActions.toggleModalType("form"));
     dispatch(uiActions.toggleModal());
   };
   const handleOnDelete = () => {
-    dispatch(budgetActions.deleteItem(id));
+    dispatch(budgetActions.setSelectedItem(itemData));
+    dispatch(uiActions.toggleModal());
+    dispatch(uiActions.toggleModalType("confirm"));
   };
   return (
     <>

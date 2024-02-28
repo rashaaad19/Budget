@@ -1,13 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
-  initialState: { showModal: false, dataType: "expenses", formType: "add" },
+  initialState: {
+    showModal: false,
+    modalType: "",
+    dataType: "expenses",
+    formType: "add",
+  },
   name: "ui",
   reducers: {
     changeCategory(state, action) {
       state.category = action.payload;
     },
-
+    toggleModalType(state, action) {
+      const newModalType = action.payload;
+      state.modalType = newModalType;
+    },
     toggleModal(state) {
       state.showModal = !state.showModal;
     },

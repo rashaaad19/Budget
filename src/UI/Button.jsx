@@ -10,6 +10,7 @@ const Button = ({ title, className, type, filterType }) => {
   };
 
   const handleAddItem = () => {
+    dispatch(uiActions.toggleModalType("form"));
     dispatch(uiActions.toggleModal());
     dispatch(uiActions.toggleFormType("add"));
   };
