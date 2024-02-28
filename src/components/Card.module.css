@@ -1,26 +1,27 @@
 .transactionContainer {
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 4rem;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px 0px lightgray;
-    margin-block: 1.5rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px lightgray;
+  margin-block: 1.5rem;
 }
-.transactionTitle{
-    display: flex;
-    align-items: center;
-    flex: 1;
-    gap: 15px;
+
+.transactionTitle {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 15px;
 }
-.transactionLabel{
-    flex: 1;
-    color: var(--color-gray-blue-900);
+.transactionLabel {
+  flex: 1;
+  color: var(--color-gray-blue-900);
 }
-.price{
-    color: var(--color-gray-blue-1000);
-    font-weight: bold;
+.price {
+  color: var(--color-gray-blue-1000);
+  font-weight: bold;
 }
 
 .transactionControl {
@@ -30,19 +31,18 @@
   margin-left: 2rem;
 }
 
-
-@media (max-width:424px) {
-    .transactionContainer{
-        padding: 1rem 2rem;
-    }
-    .transactionTitle{
-        flex-wrap: wrap;
-    }
-    .transactionLabel{
-        flex: 0;
-    }
-    .transactionControl{
-        flex-direction: column;
-        margin-left: 0.5rem;
-    }
+@media (max-width: 424px) {
+  .transactionContainer {
+    padding: 1rem 2rem;
+  }
+  .transactionTitle {
+    flex-wrap: wrap;
+  }
+  .transactionLabel {
+    flex: 0;
+  }
+  .transactionControl {
+    flex-direction: column;
+    margin-left: 0.5rem;
+  }
 }
