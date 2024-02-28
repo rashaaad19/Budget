@@ -20,7 +20,9 @@
     color: lightslategray;
 }
 
-
+.balance p.redError{
+    color: red;
+}
 
 
 
@@ -29,5 +31,15 @@
 @media (max-width:424px) {
     .filterContainer{
         flex-wrap: wrap;
+    }
+    .balance{
+        flex-direction: column;
+    }
+    .balanceContainer{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .balanceContainer button{
+    padding-inline: 20px;
     }
 }

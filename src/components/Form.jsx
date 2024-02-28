@@ -22,6 +22,7 @@ const Form = () => {
   const dataType = useSelector((state) => state.ui.dataType);
   const formType = useSelector((state) => state.ui.formType);
   const modalType = useSelector((state) => state.ui.modalType);
+  const itemData = useSelector((state) => state.budget.selectedItem);
 
   if (dataType === "expenses") {
     optionsArray = expensesOptionsArray;
@@ -29,7 +30,6 @@ const Form = () => {
     optionsArray = incomeOptionsArray;
   }
 
-  
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -72,7 +72,7 @@ const Form = () => {
           <form className={classes.form} onSubmit={handleOnSubmit}>
             {formType === "edit" ? (
               <div className={classes.formHeader}>
-                <h1>Edit {dataType}</h1>
+                <h1>Edit {itemData.type}</h1>
               </div>
             ) : (
               <div className={classes.formHeader}>
@@ -82,12 +82,16 @@ const Form = () => {
                 </button>
               </div>
             )}
+
+            {/* Conditionaly rendering styles based on the form type */}
             <hr
               className={
-                dataType === "expenses"
+                (formType === "edit" && itemData.type === "expenses") ||
+                (formType === "add" && dataType === "expenses")
                   ? classes.expenseHeader
                   : classes.incomeHeader
               }
+              
             />
             <Select
               name="category"

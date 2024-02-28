@@ -22,12 +22,15 @@ function App() {
     }
   }, 0);
 
+  console.log(totalBalance<1)
   return (
     <Layout>
       <div className={classes.balanceContainer}>
         <div className={classes.balance}>
           <h1>Balance: </h1>
-          <p>{currencyFormatter(totalBalance)}</p>
+          <p className={totalBalance < 1 ? classes.redError : {}}>
+            {currencyFormatter(totalBalance)}
+          </p>
         </div>
         <Button
           title="Add New"
@@ -75,7 +78,7 @@ function App() {
         ))}
       </div>
       <Form />
-      <ConfirmCard/>
+      <ConfirmCard />
     </Layout>
   );
 }

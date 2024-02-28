@@ -15,6 +15,7 @@ const Card = ({ name, date, type, price, id }) => {
   const dispatch = useDispatch();
   const handleOnEdit = () => {
     dispatch(budgetActions.setSelectedItem(itemData));
+    
     dispatch(uiActions.toggleFormType("edit"));
     dispatch(uiActions.toggleModalType("form"));
     dispatch(uiActions.toggleModal());

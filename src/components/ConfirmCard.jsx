@@ -4,6 +4,8 @@ import Modal from "../UI/Modal";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../store/ui-slice";
 import { budgetActions } from "../store/budget-slice";
+
+
 const ConfirmCard = () => {
   const modalIsOpen = useSelector((state) => state.ui.showModal);
   const modalType = useSelector((state) => state.ui.modalType);
