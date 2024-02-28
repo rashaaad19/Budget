@@ -1,5 +1,4 @@
 import classes from "./Form.module.css";
-
 import Modal from "../UI/Modal";
 import Input from "./Input";
 import Select from "./Select";
@@ -13,7 +12,7 @@ import {
   expensesOptionsArray,
   incomeOptionsArray,
 } from "../utilties/variables";
-
+import ReactSwitch from "react-switch";
 const Form = () => {
   let optionsArray = [];
   const date = new Date();
@@ -29,7 +28,6 @@ const Form = () => {
   } else if (dataType === "income") {
     optionsArray = incomeOptionsArray;
   }
-
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -72,14 +70,27 @@ const Form = () => {
           <form className={classes.form} onSubmit={handleOnSubmit}>
             {formType === "edit" ? (
               <div className={classes.formHeader}>
-                <h1>Edit {itemData.type}</h1>
+                <h1>
+                  {itemData.type}
+                </h1>
               </div>
             ) : (
               <div className={classes.formHeader}>
                 <h1>New {dataType}</h1>
-                <button type="button" onClick={handleOnSwitch}>
-                  Switch
-                </button>
+
+                <ReactSwitch
+                  onChange={handleOnSwitch}
+                  offColor="#e28cb9"
+                  offHandleColor="#c3567e"
+                  onColor="#93adff"
+                  onHandleColor="#4362e6"
+                  checked={dataType === "income"}
+                  checkedIcon={false}
+                  uncheckedIcon={false}
+                  height={20}
+                  width={50}
+                  activeBoxShadow="none"
+                />
               </div>
             )}
 
@@ -88,10 +99,9 @@ const Form = () => {
               className={
                 (formType === "edit" && itemData.type === "expenses") ||
                 (formType === "add" && dataType === "expenses")
-                  ? classes.expenseHeader
-                  : classes.incomeHeader
+                  ? classes.expenseLine
+                  : classes.incomeLine
               }
-              
             />
             <Select
               name="category"

@@ -27,10 +27,11 @@
   height: 3px;
   width: 100%;
 }
-.expenseHeader {
+
+.expenseLine {
   background: var(--color-pink-400);
 }
-.incomeHeader {
+.incomeLine {
   background: var(--color-blue-400);
 }
 .inputContainer,
@@ -78,16 +79,15 @@
   color: var(--color-blue-800);
 }
 
-
-@media (max-width:424px) {
-  .form{
+@media (max-width: 424px) {
+  .form {
     padding: 1rem;
   }
-  .formHeader{
+  .formHeader {
     flex-direction: column;
     align-items: flex-start;
   }
-  .formHeader h1{
+  .formHeader h1 {
     font-size: 1.3rem;
   }
 }
