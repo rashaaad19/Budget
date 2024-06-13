@@ -1,7 +1,7 @@
 # Budget
 Introducing "Budget", your comprehensive financial companion! "Budget" empowers you to effortlessly track your expenses and incomes, providing a clear overview of your financial standing. With a user-friendly interface, you can easily add, categorize, and monitor your transactions, allowing you to stay organized and in control of your finances.
 
-##Demo
+## Demo
 https://budgetzz.netlify.app/
 ## Key Features
 
