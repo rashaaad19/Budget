@@ -1,5 +1,5 @@
 .modal {
-    background-color: #e4ddd4;
+    background-color: var(--color-blue-50);
     border-radius: 6px;
     border: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
@@ -9,5 +9,5 @@
   }
 
   .modal::backdrop {
-    background-color: #5b79ff72;
+    background-color: #4e578254;
   }

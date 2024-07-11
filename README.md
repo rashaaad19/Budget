@@ -16,3 +16,6 @@ Introducing "Budget", your comprehensive financial companion! "Budget" empowers 
 
 - **Frontend:** HTML, CSS and JavaScript.
 - **Libraries:** Vite, React JS and Redux Toolkit
+
+## UI Inspiration
+The UI design of this project is inspired by [this project by Axel Iglesias](https://webflow.com/made-in-webflow/website/Svelte-Webflow-Budget-App)

@@ -1,19 +1,19 @@
 :root {
-
   /* Lightest Shade */
---color-gray-blue-50: #f2f5f9;
---color-gray-blue-100: #e5e9f0;
---color-gray-blue-200: #cbd4e3;
---color-gray-blue-300: #b0bfcf;
---color-gray-blue-400: #95abbf;
---color-gray-blue-500: #7a97af;
---color-gray-blue-600: #5f839f;
---color-gray-blue-700: #456f90;
---color-gray-blue-800: #2a5b80;
---color-gray-blue-900: #10476f; /* Darkest Shade */
---color-gray-blue-1000: #00152b; /* Darkest Shade */
+  --color-gray-blue-50: #f2f5f9;
+  --color-gray-blue-100: #e5e9f0;
+  --color-gray-blue-200: #cbd4e3;
+  --color-gray-blue-300: #b0bfcf;
+  --color-gray-blue-400: #95abbf;
+  --color-gray-blue-500: #7a97af;
+  --color-gray-blue-600: #5f839f;
+  --color-gray-blue-700: #456f90;
+  --color-gray-blue-800: #2a5b80;
+  --color-gray-blue-900: #10476f; /* Darkest Shade */
+  --color-gray-blue-1000: #00152b; /* Darkest Shade */
 
-  --color-blue-50 : #f0f4ff;
+  --color-blue-50: #f0f4ff;
+  --color-blue-75: #e7f2ff;
   --color-blue-100: #e6ecff;
   --color-blue-200: #d0ddff;
   --color-blue-300: #b3c7ff;
@@ -25,23 +25,22 @@
   --color-blue-900: #182d80; /* Darkest Shade */
 
   --color-pink-50: #faebf1;
---color-pink-100: #f3b3d2;
---color-pink-200: #eba0c7;
---color-pink-300: #e28cb9;
---color-pink-400: #d87093;  /* Provided Color */
---color-pink-500: #c3567e;
---color-pink-600: #ab3d68;
---color-pink-700: #912c54;
---color-pink-800: #741e40;
---color-pink-900: #57132f;  /* Darkest Shade */
-
+  --color-pink-100: #f3b3d2;
+  --color-pink-200: #eba0c7;
+  --color-pink-300: #e28cb9;
+  --color-pink-400: #d87093; /* Provided Color */
+  --color-pink-500: #c3567e;
+  --color-pink-600: #ab3d68;
+  --color-pink-700: #912c54;
+  --color-pink-800: #741e40;
+  --color-pink-900: #57132f; /* Darkest Shade */
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: var(--color-blue-200);
+  background-color: var(--color-blue-75);
   color: rgb(19, 26, 27);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
